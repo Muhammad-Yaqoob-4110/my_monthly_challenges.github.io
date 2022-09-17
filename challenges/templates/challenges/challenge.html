@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}{{ challenge_name|title }}{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "challenges/challenge.css"%}">
+{% endblock  %}
+
+{% block content%}
+
+    {% include  "challenges/includes/header.html" %}
+
+    <h2>{{challenge_name}} challenge</h2>
+    <h1>Monthly Challlenges:{{challenge_name|title}}</h1>
+    {% if challenge_text is not None %}
+        <h2 class = "myFistDjangoClass">{{challenge_text}}</h2>
+    {% else %}
+        <h2>{{challenge_name|title }} is not seted yet!</h2>
+    {% endif %}
+
+{% endblock %}
